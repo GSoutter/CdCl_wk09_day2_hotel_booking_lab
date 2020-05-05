@@ -20,7 +20,7 @@ export default {
   props: ['booking'],
   methods: {
     deleteBooking(){
-      eventBus.$emit('booking-delete', this.booking)
+      eventBus.$emit('booking-delete', this.booking._id)
     },
     checkChange(){
       const updatedBooking = {
@@ -31,7 +31,8 @@ export default {
       } else {
         updatedBooking.checked_in = true
       }
-      console.log(updatedBooking);
+      // console.log(updatedBooking);
+      
       eventBus.$emit('booking-checked-change', updatedBooking)
     },
     // checkOut(){
