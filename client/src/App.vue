@@ -71,13 +71,10 @@ export default {
     eventBus.$on('booking-checked-change', (bookingCheck) => {
       const id = bookingCheck._id
       const payload = {checked_in: bookingCheck.checked_in}
-      // console.log(payload);
-      // console.log(id);
+
       BookingService.updateBooking(id, payload)
       .then((bookingUpdated) => {
-        console.log(bookingUpdated);
         let index = this.bookings.findIndex(booking => booking._id === bookingUpdated._id)
-        // this.bookings[index].checked_in = bookingUpdated.checked_in
         this.bookings.splice(index, 1, bookingUpdated)
       })
     })

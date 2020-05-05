@@ -30,18 +30,10 @@ export default {
         updatedBooking.checked_in = false
       } else {
         updatedBooking.checked_in = true
-      }
-      // console.log(updatedBooking);
-      
+      }      
       eventBus.$emit('booking-checked-change', updatedBooking)
     },
-    // checkOut(){
-    //   const updatedBooking = {
-    //     _id: this._id,
-    //     checked_in: false
-    //   }
-    //   eventBus.$emit('booking-checkOut', updatedBooking)
-    // },
+
   }
 
 
